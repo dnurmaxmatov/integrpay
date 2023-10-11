@@ -1,5 +1,5 @@
 import { DataTypes } from "sequelize";
-import sequelize from "../config/db.js";
+import sequelize from "../lib/db.js";
 
 export const Users = sequelize.define("users", {
   id: {
@@ -8,6 +8,7 @@ export const Users = sequelize.define("users", {
     primaryKey: true,
   },
   name: { type: DataTypes.STRING },
+  subdomain: {type: DataTypes.STRING},
   created_at: { type: DataTypes.INTEGER },
   updated_at: { type: DataTypes.INTEGER },
 });

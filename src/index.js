@@ -1,14 +1,20 @@
 import express from "express";
 import environments from "./lib/environments.js";
 import sequelize from "./lib/db.js";
+import routes from './routes/index.js'
+import errorHandler from "./middlewares/error-handler.middleware.js";
+import cors from 'cors'
 
 const app=express()
-app.use(express.json())
 
 const {PORT}=environments
 
+app.use(express.json())
+app.use(express.urlencoded({ extended: true }));
+app.use(cors());
 
-
+app.use(routes)
+app.use(errorHandler);
 
 const start = async () => {
   try {
