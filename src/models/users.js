@@ -9,7 +9,7 @@ export const Users = sequelize.define("users", {
   },
   name: { type: DataTypes.STRING },
   subdomain: {type: DataTypes.STRING},
-  balance: {type: DataTypes.NUMBER},
+  balance: {type: DataTypes.BIGINT, defaultValue: 0},
   created_at: { type: DataTypes.INTEGER },
   updated_at: { type: DataTypes.INTEGER },
 });
