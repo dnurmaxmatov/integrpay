@@ -7,9 +7,10 @@ export const Users = sequelize.define("users", {
     defaultValue: DataTypes.UUIDV4,
     primaryKey: true,
   },
-  name: { type: DataTypes.STRING },
-  subdomain: {type: DataTypes.STRING},
-  balance: {type: DataTypes.NUMBER},
+  amount: { type: DataTypes.INTEGER },
+  company_id: { type: DataTypes.STRING },
+  description: {type: DataTypes.STRING},
+  payment_sys: {type: DataTypes.STRING},
   created_at: { type: DataTypes.INTEGER },
   updated_at: { type: DataTypes.INTEGER },
 });
